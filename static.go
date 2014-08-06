@@ -38,7 +38,7 @@ func Static(path string) Handler {
 			}
 		}
 
-		log.Println("[Static] Serving " + file)
+		//log.Println("[Static] Serving " + file)
 		http.ServeContent(res, req, file, fi.ModTime(), f)
 	}
 }

@@ -10,14 +10,14 @@ import (
 func Logger() Handler {
 	return func(res http.ResponseWriter, req *http.Request, c Context, log *log.Logger) {
 		start := time.Now()
-		log.Printf("Started %s %s", req.Method, req.URL.Path)
+		//log.Printf("Started %s %s", req.Method, req.URL.Path)
 
 		rl := &responseLogger{res, 200, 0}
 		c.MapTo(rl, (*http.ResponseWriter)(nil))
 
 		c.Next()
 
-		log.Printf("Completed %v %s in %v\n", rl.status, http.StatusText(rl.status), time.Now().Sub(start))
+		//log.Printf("Completed %v %s in %v\n", rl.status, http.StatusText(rl.status), time.Now().Sub(start))
 	}
 }
 

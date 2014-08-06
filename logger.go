@@ -3,13 +3,13 @@ package martini
 import (
 	"log"
 	"net/http"
-	"time"
+	//"time"
 )
 
 // Logger returns a middleware handler that logs the request as it goes in and the response as it goes out.
 func Logger() Handler {
 	return func(res http.ResponseWriter, req *http.Request, c Context, log *log.Logger) {
-		start := time.Now()
+		//start := time.Now()
 		//log.Printf("Started %s %s", req.Method, req.URL.Path)
 
 		rl := &responseLogger{res, 200, 0}
